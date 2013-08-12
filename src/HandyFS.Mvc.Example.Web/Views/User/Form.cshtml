@@ -1,0 +1,33 @@
+﻿@model HandyFS.Mvc.Example.Models.CreateUserModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create User Form</title>
+</head>
+<body>
+
+    @using(Html.BeginRouteForm("User.Form", FormMethod.Post)) {
+    
+        @Html.LabelFor(m => m.UserName)
+        @Html.EditorFor(m => m.UserName)
+        @Html.ValidationMessageFor(m => m.UserName)
+        <br />
+
+        @Html.LabelFor(m => m.Password)
+        @Html.PasswordFor(m => m.Password)
+        @Html.ValidationMessageFor(m => m.Password)
+        <br />
+
+        <button type="submit">Submit</button>
+        
+    }
+
+</body>
+</html>
